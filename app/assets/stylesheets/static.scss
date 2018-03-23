@@ -1,0 +1,56 @@
+.fullayout {
+  .content {
+    padding: unset;
+  }
+  &.content-wrapper, &.main-footer {
+    margin-left: unset;
+  }
+}
+
+.login-wrapper, .signup-wrapper, .password-wrapper {
+  width: 320px;
+  margin: 10em auto;
+  .box {
+    border: 1px solid #d2d6de;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+    .login-content, .signup-content, .password-content {
+      // margin-left: 10px;
+      // margin-right: 10px;
+      margin: 10px;
+      h2 {
+        margin-top: 15px;
+        text-align: center;
+      }
+      .login-form {
+        .links-group {
+          margin-bottom: unset;
+          .remember {
+            margin-right: unset;
+            display: table-cell;
+            padding-right: 8px;
+            border-right: 1px solid #ccc;
+            line-height: 12px;
+          }
+          .links {
+            display: table-cell;
+            padding-left: 5px;
+            & > a {
+              padding-left: 3px;
+            }
+          }
+        }
+      }
+      .signup-form, .password-form, .confirmation-form {
+        .links-group {
+          text-align: right;
+          margin-bottom: unset;
+          .links a {
+            padding-left: 3px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+app_name: '家学'
+
+db_name_dev: 'root'
+db_pwd_dev: '123abc..'
+db_name_test: 'root'
+db_pwd_test: '123abc..'
+db_name_pro: 'root'
+db_pwd_pro: '123abc..'
+
+secret_key_dev: b75e9dc632838548039043b58cdf210e8bbc48362d85fe78874d923e69f3d7ca7ec4e95035a594484e30250389ed39f1abc707181709bd9bc400757ca9d15ada
+secret_key_test: 97168d1bc347c75570a83a7992e2585a9b4f89e69b2947c6cbe977d3c041998150282eac5732427ea97265a8f5d3fdffc36f689f32f2bceaf9c9f8afdba79d6a 
+
+email_address: smtp.qq.com
+email_port: '25'
+email_domain: qq.com
+email_auth: login
+email_username: 313413815@qq.com
+email_password: rsxnuwptinczbjcf

@@ -1,0 +1,74 @@
+<script type="text/javascript" charset="utf-8">
+var original_width = 0;
+var large_width = 500;
+$(function() {
+  $('#avatar').on('change', function(){
+    $('#cropModalLabel').modal('show');
+    var $file = $(this);
+    var fileObj = $file[0];
+    var windowURL = window.URL || window.webkitURL;
+    var dataURL;
+    var $img = $("#imgCrop");
+    if(fileObj && fileObj.files && fileObj.files[0]){
+      dataURL = windowURL.createObjectURL(fileObj.files[0]);
+      $img.attr('src',dataURL);
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var img = new Image;
+        img.onload = function() {
+          original_width = img.width
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(fileObj.files[0]);
+      $('#imgCrop').Jcrop({
+        onChange: update_crop,
+        onSelect: update_crop,
+        setSelect: [0, 0, 500, 500],
+        aspectRatio: 1
+      });
+    }
+  })
+  $('#cropButton').on('click', function(){
+    $('#avatarForm').submit();
+  })
+});
+function update_crop(coords) {
+  var ratio = original_width / large_width;
+  $("#crop_x").val(Math.round(coords.x * ratio));
+  $("#crop_y").val(Math.round(coords.y * ratio));
+  $("#crop_w").val(Math.round(coords.w * ratio));
+  $("#crop_h").val(Math.round(coords.h * ratio)); 
+}
+</script>
+<h1>个人设置</h1>
+<%= form_for @user, url: setting_path, html: { multipart: true, method: 'post', id: 'avatarForm' } do |form| %>
+  <%= image_tag @user.avatar.url(:medium), width: '100px', height: '100px'%>
+  <p/>
+  <label class="btn btn-primary">
+    上传图片
+    <%= form.file_field :avatar, id: 'avatar', class: 'manual-file-chooser' %>
+  </label>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+    <%= form.hidden_field attribute, :id => attribute %>
+  <% end %>
+  <p/>
+  <%= form.submit %>
+<% end %>
+
+<div class="modal fade" tabindex="-1" id="cropModalLabel" role="dialog" aria-labelledby="cropModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">剪切图片</h4>
+      </div>
+      <div class="modal-body">
+        <img id="imgCrop" src="" height="500px" width="500px">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="cropButton">剪切</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>

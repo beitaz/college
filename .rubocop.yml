@@ -1,0 +1,49 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'test/**/*'
+
+Layout/EmptyLineAfterMagicComment:
+  Exclude:
+    - 'app/controllers/users/*'
+
+Layout/SpaceAroundOperators:
+  Exclude:
+    - 'config/application.rb'
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/**/*'
+
+Metrics/LineLength:
+  Exclude:
+    - 'config/**/*'
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'db/migrate/*'
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/ClassAndModuleChildren:
+  # EnforcedStyle: compact
+  Exclude:
+    - 'app/controllers/users/*'
+    - 'test/test_helper.rb'
+
+Style/RegexpLiteral:
+  Enabled: false
+  # EnforcedStyle: slashes

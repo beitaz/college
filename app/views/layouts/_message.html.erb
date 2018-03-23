@@ -1,0 +1,23 @@
+<% if flash.present? && flash.keys.present? %>
+  <% messages = flash.delete(:timedout) %>
+  <% messages.keys.each do |key, value| %>
+    <% if singular?(key) %> <!--// 信息 key 为单数时，直接输出 -->
+    <script type="text/javascript">
+      noty({
+        type: "<%= key %>", // 可选值：success, error, warning, information, notification
+        text: "<%= messages[key] %>", // [string|html] need display content
+      });
+    </script>
+    <% else %> <!--// 信息 key 为复数时，遍历后输出 -->
+      <% messages[key].each do |v| %>
+      <script type="text/javascript">
+        noty({
+          type: "<%= key.singularize %>",
+          text: "<%= v %>",
+        });
+      </script>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% flash.discard %><!-- 清空 flash 信息，防止页面刷新时重复弹出 -->
+<% end %>

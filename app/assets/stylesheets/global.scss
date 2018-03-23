@@ -1,0 +1,66 @@
+body {
+  min-width: 320px;
+}
+
+.main-header {
+  .navbar-custom-menu > ul.navbar-nav {
+    // padding-right: 40px;
+    & > li:last-child {
+      padding-right: 30px;
+    }
+    li.course-menu, li.attention-menu, li.partner-menu, li.user-menu {
+      a.dropdown-toggle {
+        height: 50px;
+        .user-image {
+          margin-right: unset;
+        }
+      }
+      .dropdown-menu {
+        background-color: #f4f4f4;
+        width: unset;
+        min-width: 120px;
+        max-width: 320px;
+        border: 1px solid #ddd;
+        text-align: center;
+        li {
+          & .nav-header-current-user {
+            margin: 0 5px;
+            overflow: hidden;
+            line-height: 30px;
+            color: #777;
+          }
+          a {
+            color: #777;
+            padding: 5px 0px;
+            &:hover {
+              background: #307AAE;
+              color: #fff;
+            }
+          }
+          .btn {
+            border: unset;
+          }
+          &.dropdown-divider {
+            height: 1px;
+            margin: 4px;
+            background-color: #e1e4e8;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-footer {
+  padding: 10px 15px;
+}
+
+// 设置 Noty 通知框位置
+#noty_bottomRight_layout_container {
+  bottom: 45px !important;
+  right: 5px !important;
+  & > li.list-group-item {
+    margin-bottom: 2px;
+    border-radius: 4px;
+  } 
+}

@@ -1,0 +1,30 @@
+<div class="password-wrapper">
+  <div class="box">
+    <div class="password-content">
+      <h2>找回密码</h2>
+      <hr/>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'password-form' }) do |f| %>
+        <% devise_error_messages! %>
+
+        <div class="field form-group">
+          <%= f.label :email, class: 'sr-only' %>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: '邮箱地址' %>
+          </div>
+        </div>
+
+        <div class="actions form-group">
+          <%= f.submit '找回密码', class: 'btn btn-primary btn-block' %>
+        </div>
+        
+        <div class="field form-group links-group">
+          <div class="links">
+            <%= render "users/shared/links" %>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>

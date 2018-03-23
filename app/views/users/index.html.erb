@@ -1,0 +1,31 @@
+<h1>用户列表</h1>
+<%= link_to  "home", home_path %>
+<%= link_to  "about", about_path %>
+<%= link_to  "profile", profile_path %>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Count</th>
+      <th>Operate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td><%= user.mobile %></td>
+      <td><%= user.sign_in_count %></td>
+      <td>
+        <%= link_to  "详细", '#' %>
+        <%= link_to  "删除", '#' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,37 @@
+<div class="password-wrapper">
+  <div class="box">
+    <div class="password-content">
+      <h2>修改密码</h2>
+      <hr/>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), 
+                   html: { method: :put, class: 'password-form' }) do |f| %>
+        <% devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="field form-group">
+          <%= f.label :password, "新密码", class: 'sr-only' %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "off", class: 'form-control',
+                               placeholder: "新密码（最少 #{@minimum_password_length} 个字符）" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "确认新密码", class: 'sr-only' %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control',
+                               placeholder: "确认新密码（最少 #{@minimum_password_length} 个字符）" %>
+        </div>
+
+        <div class="actions form-group">
+          <%= f.submit "修改密码", class: 'btn btn-primary btn-block' %>
+        </div>
+
+        <div class="field form-group links-group">
+          <div class="links">
+            <%= render "users/shared/links" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t(:app_name) %></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="家学网，边玩边学，寓教于乐，快乐学习" name="description" />
+    <meta content="beitaz" name="author" />
+    <%= favicon_link_tag 'favicon.ico', rel: 'shortcut icon', type: 'image/png' %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <%= render 'layouts/shim' %>
+  </head>
+
+  <body class="hold-transition skin-blue-light sidebar-mini">
+    <div class="wrapper">
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/aside' %>
+      <%= render 'layouts/content' %>
+      <footer class="main-footer">
+        <%= render 'layouts/footer' %>
+      </footer>
+      <%= render 'layouts/control' %>
+      <%= render 'layouts/message' %>
+    </div>
+  </body>
+</html>
