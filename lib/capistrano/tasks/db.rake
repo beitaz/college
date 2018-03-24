@@ -1,4 +1,4 @@
-namespace :cap_db do
+namespace :db do
   desc 'Dump old database'
   task :backup do
     on roles(:all) do
@@ -14,4 +14,4 @@ namespace :cap_db do
   end
 end
 
-before :deploy, 'cap_db:backup'
+before 'deploy:assets:precompile', 'db:backup'

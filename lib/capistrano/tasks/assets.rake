@@ -1,4 +1,4 @@
-namespace :cap_assets do
+namespace :assets do
   desc 'Capistrano assets'
   task :prebuild do
     on roles(:all) do
@@ -7,4 +7,4 @@ namespace :cap_assets do
   end
 end
 
-before 'deploy:compile_assets', 'cap_assets:prebuild'
+before 'deploy:compile_assets', 'assets:prebuild'
