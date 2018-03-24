@@ -14,4 +14,4 @@ namespace :db do
   end
 end
 
-before 'deploy:assets:precompile', 'db:backup'
+before :deploy, 'db:backup'
