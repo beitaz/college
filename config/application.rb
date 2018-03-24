@@ -19,7 +19,6 @@ module College
     # -- all .rb files in that directory are automatically loaded.
 
     config.generators do |g|
-      g.stylesheets false
       g.javascripts false
       g.helper false
       g.jbuilder false

@@ -9,7 +9,7 @@
 puts "\n======    Initializing...    ======\n\n"
 admin = User.create(email: 'admin@example.com', password: '123abc..', role: User.roles[:admin], confirmed_at: Time.zone.now)
 admin.save
-normal = User.create(email: 'normal@example.com', password: '123abc..', role: User.roles[:normal], confirmed_at: Time.zone.now)
+normal = User.create(email: 'normal@example.com', password: '123abc..', confirmed_at: Time.zone.now)
 normal.save
 
 # 根据不同环境，初始化数据

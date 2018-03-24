@@ -55,6 +55,17 @@ body {
   padding: 10px 15px;
 }
 
+.box {
+  border-top: unset;
+  .table-bordered {
+    border: 1px solid #ddd;
+  }
+  .box-footer.clearfix {
+    padding: 5px;
+    text-align: right;
+  }
+}
+
 // 设置 Noty 通知框位置
 #noty_bottomRight_layout_container {
   bottom: 45px !important;

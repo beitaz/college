@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308072052) do
+ActiveRecord::Schema.define(version: 20180324030839) do
+
+  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title", null: false, comment: "Course title"
+    t.string "subject", comment: "Course subject"
+    t.integer "category", comment: "Course category"
+    t.integer "grade", comment: "Course grade"
+    t.integer "teacher", null: false, comment: "Course creator"
+    t.integer "quantity", default: 1, null: false, comment: "Course quantity"
+    t.integer "price", default: 0, null: false, comment: "Course price"
+    t.integer "status", default: 0, comment: "0: developing, 1: created, 2: unpublish, 3: published, 4: disabled, 5: full"
+    t.boolean "deleted", default: false, comment: "Delete flag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_courses_on_title", unique: true
+  end
 
   create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "recipient_id"
@@ -39,7 +54,7 @@ ActiveRecord::Schema.define(version: 20180308072052) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.integer "role"
+    t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"

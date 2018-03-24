@@ -5,20 +5,24 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    authorize @courses
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    authorize @course
   end
 
   # GET /courses/new
   def new
     @course = Course.new
+    authorize @course
   end
 
   # GET /courses/1/edit
   def edit
+    authorize @course
   end
 
   # POST /courses
@@ -70,6 +74,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:title, :subject, :category, :grade, :teacher, :status, :deleted)
+      params.require(:course).permit(:title, :subject, :category, :grade, :teacher, :quantity, :price, :status, :deleted)
     end
 end

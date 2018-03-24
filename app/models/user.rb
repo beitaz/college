@@ -35,7 +35,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :timeoutable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :notifications, foreign_key: :recipient_id
-  after_initialize :set_default_role, if: :new_record?
   after_create :set_username_mobile
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' },
                              content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] },
@@ -45,10 +44,6 @@ class User < ApplicationRecord
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   # after_update :reprocess_avatar, :if => :cropping?
 
-  def set_default_role
-    self.role ||= :normal
-  end
-
   def set_username_mobile
     tmp = email.strip
     self.username = username.presence || tmp.slice(0, 50)
@@ -56,7 +51,7 @@ class User < ApplicationRecord
   end
 
   def role?(role_name)
-    self.role == role_name.to_s
+    role == role_name.to_s
   end
 
   def admin?

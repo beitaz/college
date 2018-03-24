@@ -1,0 +1,32 @@
+.course-content {
+  .cotent-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .content-blocks {
+    .block {
+      display: block;
+      .thumbnail {
+        .caption {
+          i {
+            float: left;
+            margin-right: 10px;
+          }
+          h3 {
+            margin-top: 10px;
+            margin-bottom: 0px;
+          }
+        }
+      }
+      .content {
+        padding: 9px;
+        a {
+          display: inline-block;
+          // width: 55px;
+          padding: 5px 15px 5px 0;
+        }
+      }
+    }
+  }
+}

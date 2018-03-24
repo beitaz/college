@@ -31,7 +31,22 @@ class ApplicationController < ActionController::Base
   private
 
     def full_or_partial
-      need_full_layout? ? 'fullayout' : 'application'
+      # 设置默认布局为全页面显示
+      layout = 'fullayout'
+      # 当前用户是管理员才使用局部布局（显示左边菜单栏）
+      if current_user.present? && current_user.admin?
+        layout = 'application'
+      else
+        # 需要全版面布局的 controller 和 actions
+        need_full_layout = { users: %w[home profile] }
+        need_full_layout.each_pair do |controller, actions|
+          if controller_name == controller.to_s && actions.include?(action_name)
+            layout = 'fullayout'
+            break
+          end
+        end
+      end
+      layout
     end
 
     # 在下列情况时判断所访问的 URL 是否可存储是非常重要的：
@@ -61,19 +76,5 @@ class ApplicationController < ActionController::Base
     def static_devise_controller?
       skip_authenticate = ['static']
       skip_authenticate.include?(controller_name) || devise_controller?
-    end
-
-    def need_full_layout?
-      # TODO: 管理员需要特别处理
-      # 需要全版面布局的 controller 和 actions
-      full_layout = { users: %w[home profile] }
-      flag = false
-      full_layout.each_pair do |controller, actions|
-        if controller_name == controller.to_s && actions.include?(action_name)
-          flag = true
-          break
-        end
-      end
-      static_devise_controller? || flag
     end
 end

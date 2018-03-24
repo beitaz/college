@@ -11,8 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  * require_tree .
- *= require jquery.Jcrop.min
- *= require user
+ * require jquery.Jcrop.min
+ * require user
  * require_self
  */
 
@@ -23,6 +23,9 @@
 @import "font-awesome";
 @import "adminlte";
 @import "skin-blue-light";
+@import "jquery.Jcrop.min";
+@import "animate";
 @import "global";
 @import "static";
-@import "animate";
+@import "user";
+@import "course";
