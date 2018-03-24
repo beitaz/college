@@ -21,6 +21,8 @@
       }
       .content {
         padding: 9px;
+        max-height: 147.5px;
+        overflow: hidden;
         a {
           display: inline-block;
           // width: 55px;
