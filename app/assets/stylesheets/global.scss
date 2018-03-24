@@ -3,6 +3,12 @@ body {
 }
 
 .main-header {
+  a.logo {
+    width: 125px;
+  }
+  nav.navbar.navbar-static-top {
+    margin-left: 125px;
+  }
   .navbar-custom-menu > ul.navbar-nav {
     // padding-right: 40px;
     & > li:last-child {
@@ -55,14 +61,20 @@ body {
   width: 125px;
   .sidebar {
     .sidebar-menu {
-      .treeview-menu {
-        li > a {
-          text-align: center;
-          padding: 5px;
+      .treeview {
+        & a:hover {
+          background: #A1D0EF;
         }
-      }
-      .menu-open {
-        background: #f4f4f5;
+        &.menu-open {
+          background: #67B9EF;
+          border-radius: 1px;
+        }
+        .treeview-menu {
+          li > a {
+            text-align: center;
+            padding: 5px;
+          }
+        }
       }
     }
 
