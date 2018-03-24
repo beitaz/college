@@ -28,7 +28,8 @@
 #
 
 class User < ApplicationRecord
-  enum role: [:normal, :agent, :enterprise, :admin]
+  # nomarl 普通用户， student 学生， patriarch 家长， teacher 教师， agent 代理商， enterprise 机构， admin 管理员
+  enum role: %i[normal student patriarch teacher agent enterprise admin]
   has_paper_trail on: [:update, :destroy], only: %w[username email mobile password role]
   # Include default devise modules. Others available are: :lockable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :timeoutable,
