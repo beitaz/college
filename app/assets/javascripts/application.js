@@ -17,6 +17,5 @@
 //= require jquery.noty.packaged.min
 //= require init
 //= require jquery.Jcrop.min
-//= require swfobject
 // require turbolinks
 // require_tree .
