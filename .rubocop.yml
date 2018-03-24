@@ -2,6 +2,7 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   Exclude:
+    - 'node_modules/**/*'
     - 'db/schema.rb'
     - 'test/**/*'
 
@@ -32,17 +33,22 @@ Metrics/MethodLength:
 Style/AsciiComments:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  # EnforcedStyle: compact
+  Exclude:
+    - 'app/controllers/users/*'
+    - 'test/test_helper.rb'
+
 Style/Documentation:
   Enabled: false
 
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
-Style/ClassAndModuleChildren:
-  # EnforcedStyle: compact
-  Exclude:
-    - 'app/controllers/users/*'
-    - 'test/test_helper.rb'
+# 冻结字符串以辅助 Ruby 升级到 3.0 版本
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 
 Style/RegexpLiteral:
   Enabled: false
