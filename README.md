@@ -253,6 +253,12 @@ $ bundle exec cap production deploy --trace  # trace through task invocations
 $ bundle exec cap production deploy --print-config-variables  # lists all config variable before deployment tasks
 ```
 
+* 自动部署前，需要手动安装 `PaperClip` 需要的 `ImageMagick`：
+
+```SHELL
+$ sudo yum update && sudo yum install -y ImageMagick.x86_64
+```
+
 ## 使用 Yarn 添加第三方 Javascript 库
 * [可选]修改 `Gemfile`
 ```ruby
