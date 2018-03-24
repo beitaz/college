@@ -1,6 +1,6 @@
 namespace :cap_chown do
   desc 'Change passenger dog owner'
-  task :chage_owner do
+  task :change_owner do
     on roles(:all) do
       dog_path = '/var/run/passenger-instreg'
       username = 'bestar'
