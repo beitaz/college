@@ -33,7 +33,7 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="treeview">
+      <li class="treeview <%= 'active' if controller_name == 'courses' %>">
         <a href="#">
           <i class="fas fa-book"></i>
           <span>资源管理</span>
@@ -50,13 +50,19 @@
           </li>
         </ul>
       </li>
-      <li>
-        <a href="#">
+      <li class="<%= 'active' if controller_name == 'users' && action_name == 'index' %>">
+        <a href="<%= users_path %>">
           <i class="fa fa-link"></i>
-          <span>Another Link</span>
+          <span>用户管理</span>
         </a>
       </li>
-      <li class="treeview">
+      <li class="<%= 'active' if controller_name == 'users' && action_name == 'profile' %>">
+        <a href="<%= profile_path %>">
+          <i class="fa fa-link"></i>
+          <span>个人设置</span>
+        </a>
+      </li>
+      <li class="treeview <%= 'active' if action_name == 'static' %>">
         <a href="#">
           <i class="fa fa-link"></i>
           <span>Multilevel</span>

@@ -3,12 +3,12 @@ body {
 }
 
 .main-header {
-  a.logo {
-    width: 125px;
-  }
-  nav.navbar.navbar-static-top {
-    margin-left: 125px;
-  }
+  // a.logo {
+  //   width: 125px;
+  // }
+  // nav.navbar.navbar-static-top {
+  //   margin-left: 125px;
+  // }
   .navbar-custom-menu > ul.navbar-nav {
     // padding-right: 40px;
     & > li:last-child {
@@ -61,15 +61,17 @@ body {
   width: 125px;
   .sidebar {
     .sidebar-menu {
-      .treeview {
-        & a:hover {
+      li {
+        & > a:hover {
           background: #A1D0EF;
         }
-        &.menu-open {
-          background: #67B9EF;
+        &.active {
           border-radius: 1px;
+          & > a {
+            background: #67B9EF;
+          }
         }
-        .treeview-menu {
+        & > .treeview-menu {
           li > a {
             text-align: center;
             padding: 5px;
@@ -82,7 +84,7 @@ body {
 }
 
 .content-wrapper {
-  margin-left: 125px;
+  // margin-left: 125px;
 }
 
 .main-footer {
