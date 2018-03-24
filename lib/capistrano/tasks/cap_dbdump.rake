@@ -1,10 +1,14 @@
-namespace :cap_dbdump do
+namespace :cap_db do
   desc 'Dump old database'
-  task :dbdump do
-    on roles(:all) do
-      execute "mysqldump -u root -p 123abc.. college_production > #{deploy_to}/shared/db/#{fetch(:datetime)}.dump"
+  task :backup do
+    on roles(:db) do
+      username = 'root'
+      password = '123abc..'
+      database = 'college_production'
+      execute :mysqldump, "-u #{username} --password #{password} --databases #{database} > \
+                          #{deploy_to}/shared/db/#{fetch(:datetime)}.dump"
     end
   end
 end
 
-before :deploy, 'cap_dbdump:dbdump'
+before :deploy, 'cap_db:backup'
