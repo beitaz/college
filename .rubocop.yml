@@ -10,6 +10,10 @@ Layout/EmptyLineAfterMagicComment:
   Exclude:
     - 'app/controllers/users/*'
 
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+
 Layout/SpaceAroundOperators:
   Exclude:
     - 'config/application.rb'

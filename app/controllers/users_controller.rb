@@ -37,12 +37,12 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+    def set_user
+      @user = User.find(params[:id])
+    end
 
-  def user_params
-    params.require(:user).permit(:username, :email, :mobile, :password, :password_confirmation, :rememeber_me, :avatar,
-                                 :crop_x, :crop_y, :crop_w, :crop_h)
-  end
+    def user_params
+      params.require(:user).permit(:username, :email, :mobile, :password, :password_confirmation, :rememeber_me, :avatar,
+                                   :crop_x, :crop_y, :crop_w, :crop_h)
+    end
 end

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subject: MyString
+  category: 1
+  grade: 1
+  teacher: 1
+  status: 1
+  deleted: false
+
+two:
+  title: MyString
+  subject: MyString
+  category: 1
+  grade: 1
+  teacher: 1
+  status: 1
+  deleted: false
