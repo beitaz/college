@@ -660,7 +660,7 @@ a:focus {
 .sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
   display: block !important;
   position: absolute;
-  width: 180px;
+  width: 120px;
   left: 50px;
 }
 .sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a > span {
@@ -673,8 +673,9 @@ a:focus {
   position: relative !important;
   float: right;
   width: auto !important;
-  left: 180px !important;
+  left: 120px !important;
   top: -22px !important;
+  padding-left: 5px;
   z-index: 900;
 }
 .sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a > .pull-right-container > .label:not(:first-of-type) {

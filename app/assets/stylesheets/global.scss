@@ -51,6 +51,28 @@ body {
   }
 }
 
+.main-sidebar {
+  width: 125px;
+  .sidebar {
+    .sidebar-menu {
+      .treeview-menu {
+        li > a {
+          text-align: center;
+          padding: 5px;
+        }
+      }
+      .menu-open {
+        background: #f4f4f5;
+      }
+    }
+
+  }
+}
+
+.content-wrapper {
+  margin-left: 125px;
+}
+
 .main-footer {
   padding: 10px 15px;
 }
