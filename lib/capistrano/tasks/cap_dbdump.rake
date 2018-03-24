@@ -4,7 +4,7 @@ namespace :cap_db do
     on roles(:all) do
       info 'Database backup.'
       backup_path = "#{fetch(:deploy_to)}/shared/db"
-      file_name = "#{fetch(:datetime)}.dump"
+      file_name = "#{Time.now.strftime('%Y-%m-%d_%H:%M:%S')}.dump"
       username = 'root'
       password = '123abc..'
       database = 'college_production'

@@ -14,8 +14,6 @@ set :deploy_via, :remote_cache
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/college'
 
-set :datetime, Time.now.strftime('%Y%m%d%H%M%S')
-
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
