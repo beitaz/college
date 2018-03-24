@@ -22,7 +22,7 @@
 .DS_Store
 
 # Lock files
-# Gemfile.lock
+# Gemfile.lock # Cannot ignore because capistrano need Gemfile.lock
 yarn.lock
 package-lock.json
 
